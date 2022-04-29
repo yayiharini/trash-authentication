@@ -71,8 +71,11 @@ def parseExcel(file_name):
 
     trash_final_list = []
     for trashid, record, material, count in final_list:
-        material = material.split("-")
-        trash_final_list.append((record, material[0].strip(), material[1].strip(), count))
+        if material == "Batteries (non-vehicle) - Hazardous":
+            material = material.split("- ")
+        else:
+            material = material.split("-")
+        trash_final_list.append((record, material[0].strip(), material[1].strip(), count)
 
     print('trash final list',trash_final_list)
 
