@@ -116,7 +116,7 @@ def getFile(request):
 
     df.to_excel(file_name,index=False)
     print('filename', file_name)
-    #parseExcel(file_name)
+    parseExcel(file_name)
     location()
     os.remove(file_name)
     return Response()
